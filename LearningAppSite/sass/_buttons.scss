@@ -1,0 +1,73 @@
+.signIn {
+    display: block;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    line-height: 150px;
+    background-color: gray;
+    box-shadow: 0 0 10px gray;
+
+}
+
+.signIn:hover {
+    background-color: green;
+}
+
+.toSite {
+    display: block;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    max-width: 300px;
+    background-color: lightgray;
+    color: #212121;
+}
+
+.toSite:hover {
+    background-color: green;
+}
+
+.createAccount {
+    display: block;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    max-width: 300px;
+    background-color: lightgray;
+    color: #212121;
+    border-radius: 2em;
+}
+
+.createAccount:hover {
+    background-color: green;
+}
+
+.buy {
+    width: 100%;
+    background-color: darkgray;
+    color: #212121;
+}
+
+.buy:hover {
+    background-color: green;
+}
+
+.submit {
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border-radius: 1.5em;
+    background-color: gray;
+    box-shadow: 0 0 7px gray;
+    max-width: 200px;
+
+}
+
+.submit:hover {
+    background-color: yellow;
+    color: #212121;
+}

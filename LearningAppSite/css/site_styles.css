@@ -1,0 +1,420 @@
+@charset "UTF-8";
+/* content */
+body {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+h1 {
+  font-weight: 700;
+  max-width: 1200px;
+  font-size: 5em;
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  text-align: center;
+  line-height: 1em;
+  margin-bottom: 1em;
+  color: grey;
+}
+
+h2 {
+  max-width: 1000px;
+  font-size: 3em;
+  line-height: 1.2em;
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+p,
+ol,
+ul,
+dl {
+  max-width: 1000px;
+  font-size: 1.4em;
+  line-height: 1.7em;
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+ul,
+ol {
+  padding-left: 3.5em;
+}
+
+dt {
+  font-weight: bolder;
+}
+
+/* content */
+.statement {
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.menu input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+.menu label {
+  display: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.menu a,
+.menu label {
+  color: #E5F8FF;
+  text-decoration: none;
+}
+.menu ul {
+  display: flex;
+  list-style: none;
+  background-color: #004B66;
+  justify-content: space-around;
+  margin: 0;
+  max-width: 100%;
+}
+.menu ul > li {
+  cursor: pointer;
+}
+.menu ul > li :hover {
+  font-size: larger;
+  transition: ease-in-out;
+  background-color: #E5F8FF;
+  color: #004B66;
+}
+.menu ul > li :active {
+  font-size: smaller;
+  transition: ease-in-out;
+  background-color: #E5F8FF;
+  color: #004B66;
+}
+
+/* menu stuff for small screens */
+@media screen and (max-width: 800px) {
+  .menu {
+    background-color: #004B66;
+  }
+  .menu ul {
+    display: none;
+    height: 100%;
+  }
+  .menu ul > li {
+    border-right: none;
+  }
+  .menu label {
+    position: right;
+    display: block;
+    width: 100%;
+    min-height: 2.5em;
+    font-size: 1.2em;
+  }
+  .menu label:after {
+    position: absolute;
+    right: 1.2em;
+    content: "≡";
+    font-size: 1.8em;
+  }
+  .menu input[type=checkbox]:checked ~ label:after {
+    color: white;
+  }
+  .menu input[type=checkbox]:checked ~ ul {
+    display: block;
+  }
+  .menu input[type=checkbox]:checked ~ ul > li {
+    width: 100%;
+    text-align: center;
+  }
+}
+.grid {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+}
+.grid-50_50 {
+  grid-template-columns: 50% 50%;
+}
+.grid-25_75 {
+  grid-template-columns: 25% 75%;
+}
+.grid-33_33_33 {
+  grid-template-columns: 33% 33% 33%;
+}
+.grid div {
+  margin: 1.5em;
+}
+
+@media screen and (max-width: 1000px) {
+  .grid-50_50 {
+    grid-template-columns: 100%;
+  }
+  .grid-25_75 {
+    grid-template-columns: 100%;
+  }
+  .grid-33_33_33 {
+    grid-template-columns: 100%;
+  }
+}
+.image {
+  display: block;
+  margin: auto;
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+.image-small {
+  width: 50%;
+}
+.image-medium {
+  width: 75%;
+}
+.image-large {
+  width: 90%;
+}
+
+.signIn {
+  display: block;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  line-height: 150px;
+  background-color: gray;
+  box-shadow: 0 0 10px gray;
+}
+
+.signIn:hover {
+  background-color: green;
+}
+
+.toSite {
+  display: block;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  max-width: 300px;
+  background-color: lightgray;
+  color: #212121;
+}
+
+.toSite:hover {
+  background-color: green;
+}
+
+.createAccount {
+  display: block;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  max-width: 300px;
+  background-color: lightgray;
+  color: #212121;
+  border-radius: 2em;
+}
+
+.createAccount:hover {
+  background-color: green;
+}
+
+.buy {
+  width: 100%;
+  background-color: darkgray;
+  color: #212121;
+}
+
+.buy:hover {
+  background-color: green;
+}
+
+.submit {
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  border-radius: 1.5em;
+  background-color: gray;
+  box-shadow: 0 0 7px gray;
+  max-width: 200px;
+}
+
+.submit:hover {
+  background-color: yellow;
+  color: #212121;
+}
+
+/* content containers */
+.container_65_35 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 1em;
+}
+.container_65_35 .side_65 {
+  flex: 2;
+}
+.container_65_35 .side_35 {
+  flex: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .container_65_35 {
+    flex-direction: column-reverse;
+  }
+}
+.packages .packagesContainer {
+  max-width: 800px;
+  border-radius: 0.5em;
+  background-color: lightgray;
+  color: #212121;
+  padding: 1em;
+  display: block;
+  margin: auto;
+  margin-bottom: 1em;
+}
+.packages .packagesContainer h2 {
+  font-size: 2em;
+  font-weight: bold;
+}
+.packages .packagesContainer .priceDetails {
+  display: flex;
+  border-top: solid 1px #212121;
+  justify-content: space-between;
+  margin: 1em;
+}
+.packages .packagesContainer .priceDetails .priceText {
+  justify-content: left;
+}
+.packages .packagesContainer .priceDetails .priceNum {
+  justify-content: right;
+}
+
+.footer {
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: gray;
+  color: #212121;
+  text-align: center;
+}
+.footer a {
+  color: whitesmoke;
+}
+
+.topBar {
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: gray;
+  color: #212121;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.courseCategories {
+  max-width: 700px;
+  margin: auto;
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.courseCategories .accordion {
+  background-color: whitesmoke;
+}
+.courseCategories .accordion .accordion-title::before {
+  display: none;
+}
+.courseCategories ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+}
+.courseCategories ul li a {
+  color: #212121;
+  background-color: lightgray;
+  padding: 3.5em;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+  .courseCategories div {
+    display: block;
+    justify-content: space-between;
+  }
+  .courseCategories div div {
+    text-align: center;
+  }
+}
+/* content containers reverse */
+.container_50_50 {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+}
+.container_50_50 .side_01 {
+  flex: 1;
+  margin: 1em;
+}
+.container_50_50 .side_02 {
+  flex: 1;
+  margin: 1em;
+}
+
+@media only screen and (max-width: 900px) {
+  .container_50_50 {
+    flex-direction: column-reverse;
+  }
+}
+.container_50_50 > * {
+  width: 100%;
+}
+
+/* forms */
+.formSignIN {
+  max-width: 1000px;
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+}
+
+/* user information */
+.userInformation {
+  margin: 1em;
+  padding: 1em;
+}
+.userInformation img {
+  max-width: 200px;
+  display: block;
+  margin: auto;
+}
+.userInformation .userName {
+  text-align: center;
+}
+.userInformation .userInfoDropDown {
+  max-width: 1000px;
+  margin: auto;
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.userInformation .userInfoDropDown .accordion {
+  background-color: whitesmoke;
+}
+.userInformation .userInfoDropDown .accordion-title {
+  color: #212121;
+}

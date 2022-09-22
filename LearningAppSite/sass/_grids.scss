@@ -1,0 +1,40 @@
+.grid {
+    justify-content: center;
+    align-items: center;
+    display: grid;
+
+    &-50_50 {
+        grid-template-columns: 50% 50%;
+
+    }
+
+    &-25_75 {
+        grid-template-columns: 25% 75%;
+    }
+
+    &-33_33_33 {
+        grid-template-columns: 33% 33% 33%;
+    }
+
+    div {
+        margin: 1.5em;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .grid {
+        &-50_50 {
+            grid-template-columns: 100%;
+        }
+
+        &-25_75 {
+            grid-template-columns: 100%;
+        }
+
+        &-33_33_33 {
+            grid-template-columns: 100%;
+        }
+    }
+
+}

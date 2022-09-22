@@ -1,0 +1,110 @@
+.menu {
+
+    input[type=checkbox] {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    label {
+        display: none;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    a,
+    label {
+        color: #E5F8FF;
+        text-decoration: none;
+
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        background-color: #004B66;
+        justify-content: space-around;
+        margin: 0;
+        max-width: 100%;
+
+
+
+        >li {
+            cursor: pointer;
+        }
+    }
+
+
+
+    ul {
+        >li :hover {
+            font-size: larger;
+            transition: ease-in-out;
+            background-color: #E5F8FF;
+            color: #004B66;
+        }
+    }
+
+    ul {
+        >li :active {
+            font-size: smaller;
+            transition: ease-in-out;
+            background-color: #E5F8FF;
+            color: #004B66;
+        }
+    }
+
+
+}
+
+/* menu stuff for small screens */
+
+@media screen and (max-width: 800px) {
+
+
+    .menu {
+
+        background-color: #004B66;
+
+        ul {
+            display: none;
+            height: 100%;
+
+            >li {
+                border-right: none;
+            }
+        }
+
+        label {
+            position: right;
+            display: block;
+            width: 100%;
+            min-height: 2.5em;
+            font-size: 1.2em;
+
+        }
+
+        label:after {
+            position: absolute;
+            right: 1.2em;
+            content: "\2261";
+            font-size: 1.8em;
+
+        }
+
+        input[type=checkbox]:checked~label:after {
+            color: white;
+        }
+
+        input[type=checkbox]:checked~ul {
+            display: block;
+
+            >li {
+                width: 100%;
+                text-align: center;
+
+
+            }
+        }
+    }
+}

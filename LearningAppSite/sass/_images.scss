@@ -1,0 +1,19 @@
+.image {
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+
+    &-small {
+        width: 50%;
+    }
+
+    &-medium {
+        width: 75%;
+    }
+
+    &-large {
+        width: 90%;
+    }
+}
