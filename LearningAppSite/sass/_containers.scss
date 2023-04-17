@@ -220,6 +220,10 @@
         .accordion-title {
             color: #212121;
         }
+
+        & ul {
+            padding: 0;
+        }
     }
 }
 
@@ -235,7 +239,7 @@
     margin-bottom: 2em;
 
     .userScoreNum {
-        
+        margin-top: -.5em;
         font-weight: bold;
         font-size: 150px;
     }

@@ -418,6 +418,9 @@ dt {
 .userInformation .userInfoDropDown .accordion-title {
   color: #212121;
 }
+.userInformation .userInfoDropDown ul {
+  padding: 0;
+}
 
 .scoreBox {
   background-color: lightgray;
@@ -429,6 +432,7 @@ dt {
   margin-bottom: 2em;
 }
 .scoreBox .userScoreNum {
+  margin-top: -0.5em;
   font-weight: bold;
   font-size: 150px;
 }

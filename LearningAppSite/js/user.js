@@ -35,11 +35,19 @@ console.log(userInfoWithScore);
 
 document.getElementById("scoreHere").innerHTML = userScore;
 
-// add point to userScore
+// add point to userScore and userInfoWithScore
 
 function addPoint() {
     userScore++;
+    userInfoWithScore[2][1] = userScore;
     document.getElementById("scoreHere").innerHTML = userScore;
+}
+
+// on click log userInformationWithScore to console
+
+function getUserScore() {
+    console.log(userInfoWithScore);
+    console.log(userScore);
 }
 
 
