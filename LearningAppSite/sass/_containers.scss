@@ -220,5 +220,27 @@
         .accordion-title {
             color: #212121;
         }
+
+        & ul {
+            padding: 0;
+        }
+    }
+}
+
+// score box //
+
+.scoreBox {
+    background-color: lightgray;
+    padding: .5em;
+    max-width: 800px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 2em;
+
+    .userScoreNum {
+        margin-top: -.5em;
+        font-weight: bold;
+        font-size: 150px;
     }
 }

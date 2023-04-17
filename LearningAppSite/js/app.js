@@ -12,10 +12,9 @@ document.getElementById("signIn").innerHTML = "<label for='Uname'>" + "User name
 + "<label for='passWord'>" + "Password:" + "</label>" + "<br>"
 + "<input type='text' id='passWord' name='passWord' value='Password'>" + "<br>" + "<br>" + "<input type='submit' value='Submit' class='large button submit' id='submitSignIn'>"; 
 
-// submit username password
+// submit username + password
 
 const form = document.querySelector('form');
-
 
 form.addEventListener('submit', handleSubmit);
 
@@ -31,11 +30,13 @@ function handleSubmit(event) {
 
     window.localStorage.setItem('userInformation', JSON.stringify(userInfo));
 
+
     //take user to home page
 
     window.location.href = ("../pages/homePage.html");
-    
+
 }
+
 
 
 
