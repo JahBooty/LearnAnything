@@ -185,6 +185,39 @@
     display: block;
     margin: auto;
     margin-top: 2em;
+
+
+    & .userImages {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: center;
+
+        input {
+            visibility: visible;
+            opacity: 0;
+            margin: auto;
+            display: block;
+        }
+
+        label {
+            width: 200px;
+
+        }
+
+        input[type=radio]+label {
+            background-color: lightgray;
+            text-align: center;
+            padding: .5em;
+        }
+
+        input[type=radio]:checked+label {
+            background-color: lightgreen;
+        }
+
+    }
+
 }
 
 /* user information */

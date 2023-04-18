@@ -16,7 +16,38 @@
 
     <h1>Create an account</h1>
 
-    <p>Create an account now!!!</p>
+    <!-- this is where you place the form (don't forget to convert ' to ") add id="createNewAccount" to <form> when ready -->
+    <!-- <form class="formSignIN" id="createAccount"></form> -->
+
+    <form class="formSignIN">
+        <label for="Uname">User name</label>
+        <input type="text" id="Uname" name="userName" value="Name">
+        <br>
+        <label for="passWord">Password</label>
+        <input type="text" id="passWord" name="passWord" value="Password">
+        <br>
+        <label>choose a user image</label>
+        <br>
+        <div class="userImages">
+            <div><input type="radio" name="check" value="image01" id="Checkbox01" />
+            <label for="Checkbox01"><img src="../images/userPic.svg" />user 01</label></div>
+            <div><input type="radio" name="check" value="image02" id="Checkbox02" />
+            <label for="Checkbox02"><img src="../images/userPic.svg" />user 02</label></div>
+            <div><input type="radio" name="check" value="image03" id="Checkbox03" />
+            <label for="Checkbox03"><img src="../images/userPic.svg" />user 03</label></div>
+            <div><input type="radio" name="check" value="image04" id="Checkbox04" />
+            <label for="Checkbox04"><img src="../images/userPic.svg" />user 04</label></div>
+            <div><input type="radio" name="check" value="image05" id="Checkbox05" />
+            <label for="Checkbox05"><img src="../images/userPic.svg" />user 05</label></div>
+            <div><input type="radio" name="check" value="image06" id="Checkbox06" />
+            <label for="Checkbox06"><img src="../images/userPic.svg" />user 06</label></div>
+            <div><input type="radio" name="check" value="image07" id="Checkbox07" />
+            <label for="Checkbox07"><img src="../images/userPic.svg" />user 07</label></div>
+        </div>
+        <br>
+        <input type="submit" value="Submit" class="large button submit" id="submitNewAccount">
+    </form>
+
 
 
     <div class="footer">
@@ -27,7 +58,9 @@
     <script src="../js/vendor/jquery.js"></script>
     <script src="../js/vendor/what-input.js"></script>
     <script src="../js/vendor/foundation.js"></script>
+    <script src="../js/account.js"></script>
     <script src="../js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
 </html>
