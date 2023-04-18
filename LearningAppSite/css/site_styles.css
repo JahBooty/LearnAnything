@@ -391,6 +391,29 @@ dt {
   margin: auto;
   margin-top: 2em;
 }
+.formSignIN .userImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+.formSignIN .userImages input {
+  visibility: visible;
+  opacity: 0;
+  margin: auto;
+  display: block;
+}
+.formSignIN .userImages label {
+  width: 200px;
+}
+.formSignIN .userImages input[type=radio] + label {
+  background-color: lightgray;
+  text-align: center;
+  padding: 0.5em;
+}
+.formSignIN .userImages input[type=radio]:checked + label {
+  background-color: lightgreen;
+}
 
 /* user information */
 .userInformation {
