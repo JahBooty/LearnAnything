@@ -1,70 +1,84 @@
 $(document).foundation()
 
-// get user info from local storage from sign in page
+// get user info from local storage if there is any
 
-var userCredentials = localStorage.getItem("userInformation");
+var userCredentials = localStorage.getItem("userAccountInformation");
 
-// get user info from local storage from new account page
+// parse userCredentials
 
-var userCredentialsAll = localStorage.getItem("userAccountInformation");
-
-
-// parse userCredentials and userCredentialsAll
-
-var userSignInInfo = JSON.parse(userCredentials);
-var userNewAccountInfo = JSON.parse(userCredentialsAll);
-
-console.log(userCredentials);
-
-console.log(userCredentialsAll);
-
-console.log(userSignInInfo.userName);
-
-console.log(userSignInInfo.passWord);
-
+var userNewAccountInfo = JSON.parse(userCredentials);
+console.log(userNewAccountInfo);
 console.log(userNewAccountInfo.userName);
-
 console.log(userNewAccountInfo.passWord);
+console.log(userNewAccountInfo.userImage);
 
-console.log(userNewAccountInfo.check);
+// get previous user data from local storage (this one has the score in it)
 
+var lastUser = localStorage.getItem("userInfoAll");
 
-// put user information on the page (this is from user sign in page)
+// parse previous user data form userInfoAll
 
-document.getElementById("userName").innerHTML = userSignInInfo.userName;
+var lastUserInfo = JSON.parse(lastUser);
 
-document.getElementById("userPass").innerHTML = userSignInInfo.passWord;
+// log lastUserInfo (for the userScore)
 
+console.log(lastUserInfo[3][1]);
 
-// combine userSignInInfo and userScore in one array
+// put userImage on the page (from the userAccountInformation array)
 
-var userScore = 0;
+const userImageHolder = document.getElementById("userImageGoesHere");
 
-const userInfoWithScore = [
-    ['userName', (userSignInInfo.userName)],
-    ['userPassword', (userSignInInfo.passWord)],
-    ['userScore', (userScore)]
+document.getElementById("userImageGoesHere").innerHTML = "<img src='../images/" + userNewAccountInfo.userImage + ".svg' alt='userImage'/>";
+
+// put user information (username and password) on the page
+
+document.getElementById("userName").innerHTML = userNewAccountInfo.userName;
+
+document.getElementById("userPass").innerHTML = userNewAccountInfo.passWord;
+
+//place holder score for a new user if userNewAccountInfo.userName is equal to userInfoAll[0][1] then scoreHolder = userInfoAll[3][1]
+
+if (userNewAccountInfo.userName == lastUserInfo[0][1]) {
+    scoreHolder = lastUserInfo[3][1];
+}
+
+else { 
+    scoreHolder = 0;
+}
+
+// put score on screen
+
+document.getElementById("scoreHere").innerHTML = scoreHolder;
+
+// create new array with score
+
+var userScore = scoreHolder;
+
+const userInfoAll = [
+    ['userName', (userNewAccountInfo.userName)],
+    ['userPassword', (userNewAccountInfo.passWord)],
+    ['userImage', (userNewAccountInfo.userImage)],
+    ['UserScore', (userScore)],
 ]
 
-console.log(userInfoWithScore);
+console.log(userInfoAll);
 
-// put userScore on the page
-
-document.getElementById("scoreHere").innerHTML = userScore;
-
-// add point to userScore and userInfoWithScore
+// button action - add point to userInfoAll userScore
 
 function addPoint() {
     userScore++;
-    userInfoWithScore[2][1] = userScore;
+    userInfoAll[3][1] = userScore;
     document.getElementById("scoreHere").innerHTML = userScore;
 }
 
-// on click log userInformationWithScore to console
 
-function getUserScore() {
-    console.log(userInfoWithScore);
-    console.log(userScore);
+// button action - on click (save my score button) store userInfoAll to local storage and console log
+
+function storeUserData() {
+    console.log(userInfoAll);
+
+    // add userInfoAll to local storage
+
+    localStorage.setItem("userInfoAll", JSON.stringify(userInfoAll));
+
 }
-
-
