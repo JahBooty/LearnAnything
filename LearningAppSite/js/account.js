@@ -1,11 +1,10 @@
 $(document).foundation()
 
-// submit username + password
+// submit button adds username, password, and image selection to userAccountInformation in local storage from the form
 
 const form = document.querySelector('form');
 
 form.addEventListener('submit', submitNewAccountButton);
-
 
 function submitNewAccountButton(event) {
     event.preventDefault();
@@ -14,20 +13,12 @@ function submitNewAccountButton(event) {
 
     const userAccountInfo = Object.fromEntries(data.entries());
 
-    // store userAccountInfo in local storage
+    // store userAccountInformation in local storage
 
     window.localStorage.setItem('userAccountInformation', JSON.stringify(userAccountInfo));
 
-  
-    //take user to home page
+    // take user to home page
 
     window.location.href = ("../pages/homePage.html");
 
 }
-
-
- 
-
-
-
-

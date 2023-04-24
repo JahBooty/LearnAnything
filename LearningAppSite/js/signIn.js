@@ -1,22 +1,18 @@
 $(document).foundation()
 
-// click event example 
+// parse previous user data (look for previously created account)
 
-/* document.getElementById("submitSignIn").addEventListener("click", function () {
-    alert("Hello World!");
-}); */
+var lastUser = localStorage.getItem("userInfoAll");
+
+console.log(lastUser)
 
 // build the form
 
-document.getElementById("signIn").innerHTML = "<label for='Uname'>" + "User name:" + "</label>" + "<br>" + "<input type='text' id='Uname' name='userName' value='Name'>" + "<br>" +
-    "<label for='passWord'>" + "Password:" + "</label>" + "<br>" +
-    "<input type='text' id='passWord' name='passWord' value='Password'>" + "<br>" + "<br>" + "<input type='submit' value='Submit' class='large button submit' id='submitSignIn'>";
-
-// submit username + password from form
+document.getElementById("signIn").innerHTML = "<label for='Uname'>" + "User name:" + "</label>" + "<br>" + "<input type='text' id='Uname' name='userName' value='Name'>" + "<br>" + "<label for='passWord'>" + "Password:" + "</label>" + "<br>" + "<input type='text' id='passWord' name='passWord' value='Password'>" + "<br>" + "<br>" + "<input type='submit' value='Submit' class='large button submit' id='submitSignIn'>";
 
 const form = document.querySelector('form');
 
-// make the submit button work
+// look for the submit button 
 
 form.addEventListener('submit', handleSubmit);
 
@@ -25,37 +21,23 @@ form.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
     event.preventDefault();
 
-    // build data object from form
+    // build data object from the form
 
     const data = new FormData(event.target);
 
-    // put submitted user info in local storage as an array (userSignInInfo)
+    // put submitted user data from the form (userSignInInfo) in local storage as an array (userSignInInfo) don't really need this
 
     const userSignInInfo = Object.fromEntries(data.entries());
 
     window.localStorage.setItem('userInformation', JSON.stringify(userSignInInfo));
 
-    // get user info from local storage 
+    // get the data compare sign in and return account
 
-    var userCredentials = localStorage.getItem("userInformation");
+    var userCredentials = localStorage.getItem("userAccountInformation");
 
-    // get user userNewAccountInfo from local storage 
+    // parse userCredentials (previously created account)
 
-    var userCredentialsAll = localStorage.getItem("userAccountInformation");
-
-    // parse userCredentials (sign in) and userCredentialsAll (create account)
-
-    var userNewAccountInfo = JSON.parse(userCredentialsAll);
-
-    console.log(userSignInInfo.userName);
-
-    console.log(userSignInInfo.passWord);
-
-    console.log(userNewAccountInfo.userName);
-
-    console.log(userNewAccountInfo.passWord);
-
-    console.log(userNewAccountInfo.check);
+    var userNewAccountInfo = JSON.parse(userCredentials);
 
     // if user names and passwords match send user to home page otherwise alert user
 
